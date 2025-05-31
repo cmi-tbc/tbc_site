@@ -171,6 +171,20 @@
   }
 }
 
+/* Grid Column Spans */
+.grid-col-12 { grid-column: span 12; }
+.grid-col-11 { grid-column: span 11; }
+.grid-col-10 { grid-column: span 10; }
+.grid-col-9  { grid-column: span 9; }
+.grid-col-8  { grid-column: span 8; }
+.grid-col-7  { grid-column: span 7; }
+.grid-col-6  { grid-column: span 6; }
+.grid-col-5  { grid-column: span 5; }
+.grid-col-4  { grid-column: span 4; }
+.grid-col-3  { grid-column: span 3; }
+.grid-col-2  { grid-column: span 2; }
+.grid-col-1  { grid-column: span 1; }
+
 /* 6️⃣ Buttons */
 .button {
   display: inline-flex;
@@ -238,13 +252,21 @@
 
 /* 9️⃣ Component-Specific Layouts */
 
+/* ==========================
+   Hero Section (Layout + Padding Only)
+   ========================== */
+
 /* === Hero Section === */
 .hero-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 60% 40%; /* Text column 60%, image column 40% */
   align-items: center;
   gap: var(--space-lg);
-  padding: var(--space-xl) 0;
+  background-color: var(--neutral-cream); /* This is your brand's base background */
+  padding-top: var(--space-xl); /* Restore top padding */
+  padding-bottom: var(--space-xl); /* Restore bottom padding */
+  padding-left: var(--space-sm); /* Optional: Consistent gutters */
+  padding-right: var(--space-sm); /* Optional: Consistent gutters */
 }
 
 @media (max-width: 1024px) {
@@ -254,13 +276,24 @@
   }
 }
 
+/* Hero Content Block */
 .hero-content {
   max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-md);
 }
 
+/* Hero Image */
 .hero-image {
-  max-width: 500px;
   width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Optional shadow for pop */
 }
 
 /* === Testimonial Section === */
@@ -989,3 +1022,51 @@ color: var(--neutral-charcoal);
 .has-bg-success { background-color: var(--alert-success); color: #fff; }
 
 /\* Usage Note: Atomic classes enable rapid prototyping and enforce color consistency across components. Use .cta--, .card--, .quiz-- for structured components; .has-color- and .has-bg- for granular control or quick overrides. \*/
+
+/* ==========================
+   Image System
+   ========================== */
+
+/* Base img element: Reset + Core Behavior */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Full-Width Image (Responsive) */
+.img-full {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-md); /* Optional: Softens hero images, system consistent */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Optional: System-level shadow for brand punch */
+  display: block;
+}
+
+/* Rounded Images (e.g., Author Headshots) */
+.img-rounded {
+  border-radius: 8px;
+}
+
+/* Image with Shadow (Optional Use for Callouts) */
+.img-shadow {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Sizing Constraints (Use Sparingly, Only When Needed) */
+
+.img-small {
+  max-width: 200px;
+}
+
+.img-medium {
+  max-width: 400px;
+}
+
+.img-large {
+  max-width: 600px;
+}
