@@ -9,7 +9,7 @@
 
 /* 2️⃣ Global Variables */
 :root {
-  /* Typography */
+  /* === Typography === */
   --font-heading: 'Playfair Display', serif;
   --font-subhead: 'Roboto Slab', serif;
   --font-body: 'Satoshi', sans-serif;
@@ -28,11 +28,9 @@
   --h1-line-height: 1.15;
   --h2-line-height: 1.2;
   --h3-line-height: 1.3;
-
   --sh1-line-height: 1.3;
   --sh2-line-height: 1.4;
   --sh3-line-height: 1.5;
-
   --body-line-height: 1.5;
   --button-line-height: 1.2;
 
@@ -40,7 +38,7 @@
   --h2-letter-spacing: -0.25px;
   --h3-letter-spacing: 0;
 
-  /* Spacing */
+  /* === Spacing (8px scale) === */
   --space-xxs: 4px;
   --space-xs: 8px;
   --space-sm: 16px;
@@ -49,13 +47,46 @@
   --space-xl: 96px;
   --space-xxl: 128px;
 
-  /* Colors */
-  --primary-color: #CC5500;
-  --secondary-color: #556B2F;
-  --background: #F5F0E6;
-  --background-alt: #FAF5EE;
-  --text-primary: #1A1A1A;
-  --text-secondary: #4D4D4D;
+  /* === Colors === */
+  /* === Action Colors === */
+  --primary-color: #CC5500; /* Burnt Orange - CTAs, primary actions */
+  --primary-color-dark: #993D00; /* Hover state for primary */
+  --light-orange: #E67E22; /* Secondary CTAs, infographics */
+
+  /* === Trust Colors === */
+  --secondary-color: #556B2F; /* Olive Green - trust signals */
+  --secondary-color-dark: #3F4A21; /* Hover state for secondary */
+  --light-olive: #7A8B55; /* Backgrounds, infographics */
+
+  /* === Editorial Accent === */
+  --accent-color: #7E2E2F; /* Editorial emphasis */
+
+  /* === Data + Analytical === */
+  --data-color: #2E3B35; /* Slate Green - data, rational */
+
+  /* === Neutral System === */
+  --neutral-charcoal: #1A1A1A; /* Primary body text */
+  --neutral-slate: #4D4D4D; /* Secondary text */
+  --neutral-gray: #A6A6A6; /* UI elements */
+  --soft-gray: #D1D1D1; /* Dividers, disabled, form fields */
+  --taupe: #D8CCC0; /* Card backgrounds, form labels */
+  --neutral-cream: #F5F0E6; /* Background base */
+  --neutral-cream-alt: #FAF5EE; /* Secondary background */
+
+  /* === System Alerts === */
+  --alert-error: #B00020; /* Error states */
+  --alert-success: #2E7D32; /* Success states */
+
+  /* === Inverse / Utility === */
+  --background-inverse: #000000; /* High-contrast blocks */
+
+  /* === Print-Only === */
+  --gold: #C29758; /* Reserved for print */
+  --copper: #B35A00; /* Reserved for print */
+}
+
+body {
+  background-color: #F5F0E6;
 }
 
 /* 3️⃣ Typography Classes */
@@ -88,6 +119,7 @@
   font-weight: 700;
   font-size: var(--sh1-size);
   line-height: var(--sh1-line-height);
+  letter-spacing: -0.25px;
 }
 
 .subheading--sh2 {
@@ -116,7 +148,6 @@
   font-weight: 600;
   font-size: var(--button-size);
   line-height: var(--button-line-height);
-  text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
@@ -153,6 +184,16 @@
   padding-right: var(--space-sm);
 }
 
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    width: 100%;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    box-sizing: border-box;
+  }
+}
+
 .grid-12 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -168,6 +209,19 @@
 @media (max-width: 768px) {
   .grid-12 {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  [class*="grid-col-"] {
+    grid-column: span 12 !important; /* Override all column spans at small screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-12 {
+    grid-template-columns: 1fr; /* Single column grid */
+    gap: var(--space-sm);
   }
 }
 
@@ -189,6 +243,7 @@
 .button {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
   justify-content: center;
   border-radius: 8px;
   text-decoration: none;
@@ -196,9 +251,9 @@
   font-weight: 600;
   font-size: var(--button-size);
   line-height: var(--button-line-height);
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: var(--space-sm) var(--space-md);
+  width: auto;
   transition: background 0.2s ease, border 0.2s ease, color 0.2s ease;
 }
 
@@ -212,12 +267,14 @@
 
 .button--ghost {
   background-color: transparent;
-  border: 2px solid var(--primary-color);
+  border: none;
   color: var(--primary-color);
+  text-decoration: none;
 }
+
 .button--ghost:hover {
-  background-color: var(--primary-color);
-  color: #fff;
+  color: var(--primary-color-dark);
+  text-decoration: underline;
 }
 
 .button--secondary {
@@ -256,44 +313,99 @@
    Hero Section (Layout + Padding Only)
    ========================== */
 
-/* === Hero Section === */
 .hero-section {
-  display: grid;
-  grid-template-columns: 60% 40%; /* Text column 60%, image column 40% */
-  align-items: center;
-  gap: var(--space-lg);
-  background-color: var(--neutral-cream); /* This is your brand's base background */
-  padding-top: var(--space-xl); /* Restore top padding */
-  padding-bottom: var(--space-xl); /* Restore bottom padding */
-  padding-left: var(--space-sm); /* Optional: Consistent gutters */
-  padding-right: var(--space-sm); /* Optional: Consistent gutters */
-}
-
-@media (max-width: 1024px) {
-  .hero-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
+  background-color: var(--neutral-cream); /* May override later if using global body color */
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
 }
 
 /* Hero Content Block */
 .hero-content {
-  max-width: 600px;
+  max-width: 625px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
-/* Hero Image */
-.hero-image {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  object-fit: cover;
-  object-position: center;
-  border-radius: var(--radius-md);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Optional shadow for pop */
+/* Hero Subheading Adjustments */
+.hero-content .subheading--sh1 {
+  font-weight: 500;
+  font-size: clamp(1.375rem, 1.1rem + 1.5vw, 1.75rem);
+}
+
+/* ==========================
+   Responsive Hero Layout: 1024px and Below
+   ========================== */
+
+@media (max-width: 1024px) {
+  .hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .text-col {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .hero-section .hero-content {
+    text-align: center; /* Center text ONLY at 1024px and below */
+  }
+
+  .hero-section .hero-content .button,
+  .hero-section .hero-content .ghost-link {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section .image-col {
+    max-width: 280px;
+    width: 100%;
+    margin: var(--space-md) auto 0 auto;
+  }
+
+  .hero-section img.hero-image {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section .container {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-section .grid-col-7,
+  .hero-section .grid-col-5 {
+    grid-column: span 12; /* Force full-width stacking */
+  }
+
+  .hero-section .image-col {
+    max-width: 240px;
+    width: 100%;
+    margin-top: var(--space-md);
+  }
+
+  .hero-section img.hero-image {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* === Testimonial Section === */
@@ -317,6 +429,7 @@
 
 .list--styled li {
   position: relative;
+  font-family: var(--font-body); /* Satoshi */
   padding-left: var(--space-md);
   margin-bottom: var(--space-sm);
 }
@@ -326,6 +439,16 @@
   position: absolute;
   left: 0;
   color: var(--primary-color);
+}
+
+ul {
+  list-style-type: disc;
+  color: var(--color-text); /* Black bullets */
+  padding-left: var(--space-md); /* Reduce padding to bring bullets closer */
+}
+
+ul li::marker {
+  color: var(--color-text); /* Force bullet color */
 }
 
 /* === Quiz Components === */
@@ -732,44 +855,6 @@ small {
 
 /* === Burnout Codex Color System: World-Class Hierarchy + State Variants === */
 
-:root {
-  /* === Action Colors === */
-  --primary-color: #CC5500; /* Burnt Orange - CTAs, primary actions */
-  --primary-color-dark: #993D00; /* Hover state for primary */
-  --light-orange: #E67E22; /* Secondary CTAs, infographics */
-
-  /* === Trust Colors === */
-  --secondary-color: #556B2F; /* Olive Green - trust signals */
-  --secondary-color-dark: #3F4A21; /* Hover state for secondary */
-  --light-olive: #7A8B55; /* Backgrounds, infographics */
-
-  /* === Editorial Accent === */
-  --accent-color: #7E2E2F; /* Editorial emphasis */
-
-  /* === Data + Analytical === */
-  --data-color: #2E3B35; /* Slate Green - data, rational */
-
-  /* === Neutral System === */
-  --neutral-charcoal: #1A1A1A; /* Primary body text */
-  --neutral-slate: #4D4D4D; /* Secondary text */
-  --neutral-gray: #A6A6A6; /* UI elements */
-  --soft-gray: #D1D1D1; /* Dividers, disabled, form fields */
-  --taupe: #D8CCC0; /* Card backgrounds, form labels */
-  --neutral-cream: #F5F0E6; /* Background base */
-  --neutral-cream-alt: #FAF5EE; /* Secondary background */
-
-  /* === System Alerts === */
-  --alert-error: #B00020; /* Error states */
-  --alert-success: #2E7D32; /* Success states */
-
-  /* === Inverse / Utility === */
-  --background-inverse: #000000; /* High-contrast blocks */
-
-  /* === Print-Only === */
-  --gold: #C29758; /* Reserved for print */
-  --copper: #B35A00; /* Reserved for print */
-}
-
 /* === Text Colors === */
 .text-primary { color: var(--primary-color); }
 .text-primary:hover { color: var(--primary-color-dark); }
@@ -1069,4 +1154,155 @@ img {
 
 .img-large {
   max-width: 600px;
+}
+
+/* ==========================
+   Next Steps Section Layout
+   ========================== */
+
+.section--next-steps {
+  padding-top: var(--space-lg);  /* Reduce top spacing */
+  padding-bottom: var(--space-xl); /* Keep bottom spacing as is */
+}
+
+/* ==========================
+   Nav Bar Styles
+   ========================== */
+
+.site-header {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--neutral-cream);
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.logo-accent {
+  color: var(--primary-color);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-md);
+  justify-content: flex-end; /* Add this for right-align */
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: var(--color-text-dark);
+}
+
+/* Hamburger Styles */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-text);
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    gap: var(--space-sm);
+    background-color: var(--neutral-cream-alt);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* ==========================
+   Footer Styles
+   ========================== */
+
+.site-footer {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  border-top: 1px solid var(--neutral-cream);
+}
+
+.site-footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.site-footer nav ul li {
+  display: inline-block;
+  margin-right: var(--space-sm);
+}
+
+.site-footer nav ul li a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.site-footer nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.nav-link, .site-footer a {
+  text-transform: none;
+}
+
+.logo-img {
+  max-height: 48px; /* Adjust as needed */
+  height: auto;
+}
+
+.catey-section .container {
+  align-items: center;
 }

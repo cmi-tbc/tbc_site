@@ -3,130 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Burnout Codex</title>
-  <link rel="stylesheet" href="css/burnout_codex_site.css">
+  <title>The Burnout Codex - Reclaim Your Life from Burnout</title>
+  <meta name="description" content="Stop surviving and start thriving. Take our burnout self-assessment and discover a neuroscience-based system to reclaim your energy, power, and life.">
+  <link rel="stylesheet" href="css/tbc_site_design.css">
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="container grid-12">
-
-    <!-- Text Content (Left) -->
-    <div class="grid-col-7 hero-content">
-      <h1 class="heading--h1">
-        You are not the problem.<br>
-        The system is a setup.
-      </h1>
-      <p class="subheading--sh1 margin-top-sm">
-        You deserve more than survival.<br>
-        Let’s rebuild—your life, your work, your way.
-      </p>
-      <a href="/quiz" class="button button--primary margin-top-md">Take the Burnout Self-Assessment</a>
-      <a href="/coaching" class="button button--ghost margin-top-sm">Or explore coaching options</a>
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <span>THE BURNOUT</span> <span class="logo-accent">CODEX</span>
+        </a>
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link nav-link--active">Home</a></li>
+          <li><a href="/about" class="nav-link">About Assessment</a></li>
+          <li><a href="/take" class="nav-link">Take Assessment</a></li>
+          <li><a href="/resources" class="nav-link">Resources</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
     </div>
+  </header>
 
-    <!-- Hero Image (Right) -->
-    <div class="grid-col-5 hero-image">
-      <img src="images/catey-hero.jpg" alt="Catey smiling" class="img-full img-rounded img-shadow" />
-    </div>
-
-  </div>
-</section>
-
-<!-- Pain Section -->
-<section class="section--padding">
-  <div class="container grid-12">
-    <div style="grid-column: span 12;">
-      <h2 class="heading--h2">This Is What Burnout Actually Looks Like.</h2>
-      <p class="subheading--sh2 margin-top-sm">
-        You’re the go-to. The one who delivers. They see success.<br>
-        No one asks what it’s costing you.
-      </p>
-      <ul class="list--styled margin-top-md">
-        <li>You’re sleeping all weekend – and still waking up tired</li>
-        <li>Your mind is racing, but your motivation is gone</li>
-        <li>You’ve tried resting, pushing harder, pretending it’s fine – nothing’s worked</li>
-        <li>You hate your inbox, your job... and yourself for hating it</li>
-        <li>You keep showing up, even when there’s nothing left in the tank</li>
-      </ul>
-      <p class="text--body margin-top-md"><strong>Burnout isn’t a personal flaw. It’s a system failure.</strong><br>But you don’t have to go down with it.</p>
-      <a href="/quiz" class="button button--primary margin-top-md">Get your Burnout Score</a>
-    </div>
-  </div>
-</section>
-
-<!-- Catey Section -->
-<section class="section--padding">
-  <div class="container grid-12">
-    <div style="grid-column: span 5;">
-      <img src="images/catey.jpg" alt="Catey smiling" class="img-full img-rounded img-shadow">
-    </div>
-    <div style="grid-column: span 7;">
-      <h2 class="heading--h2">Hi, I'm Catey.</h2>
-      <p class="text--body">
-        I’ve built programs, led teams, and trained leaders across industries... until I was fried. Burnout hit me HARD.<br>
-        I didn’t just feel tired. I felt used up. Resentful. Angry, even. Like no matter how much I gave, it was never enough.<br>
-        Now I help high-achieving women stop the spiral and lead in a way that actually works for their brains, their bodies, and their lives.<br>
-        I hold a doctorate in psychology. But more importantly? I’ve lived this. And I built the system I couldn't find—the one that helps you recover without gaslighting yourself along the way.<br>
-        Because I wasn’t going to let burnout break me. I still had sh*t to do.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- Offers Section -->
-<section class="section--padding bg--taupe">
-  <div class="container">
-    <h2 class="heading--h2">Choose Your Next Step</h2>
-    <div class="grid-3 gap-lg">
-      
-      <div class="card card--offer">
-        <h3 class="subheading--sh2">Codex Lite</h3>
-        <p class="text--body">It won’t fix burnout overnight. It’s a reset button to help you pause, regroup, and intentionally choose your next step.</p>
-        <a href="#" class="button button--primary">The Reset Button</a>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container grid-12">
+      <!-- Text Content -->
+      <div class="grid-col-7">
+        <div class="hero-content">
+          <h1 class="heading--h1">
+            You are not the problem.<br>
+            The system is a setup.
+          </h1>
+          <p class="subheading--sh1 margin-top-sm">
+            You deserve more than survival.<br>
+            Let's rebuild—your life, your work, your way.
+          </p>
+          <div class="flex-column" style="align-items: flex-start;">
+            <a href="/quiz" class="button button--primary margin-top-md">Take the Burnout Self-Assessment</a>
+            <a href="/coaching" class="button button--ghost margin-top-sm">Or explore coaching options</a>
+          </div>
+        </div>
       </div>
-      
-      <div class="card card--offer">
-        <h3 class="subheading--sh2">Codex Coaching</h3>
-        <p class="text--body">This isn’t another self-care routine. It’s a neuroscience-based system to help you reclaim your energy, your power, your life.</p>
-        <a href="#" class="button button--primary">Let's Talk</a>
-      </div>
-      
-      <div class="card card--offer">
-        <h3 class="subheading--sh2">Not ready to dive in yet?</h3>
-        <p class="text--body">Start small. This self-assessment helps you understand where you are - so you can decide where to go next.</p>
-        <a href="#" class="button button--primary">Take the Self-Assessment</a>
-      </div>
-    
-    </div>
-  </div>
-</section>
 
-<!-- Testimonials Section -->
-<section class="section--padding bg--neutral-cream-alt">
-  <div class="container">
-    <h2 class="heading--h2">Real Women. Real Support.</h2>
-    <div class="grid-3 testimonials">
-      
-      <div class="card card--testimonial">
-        <p class="text--quotes">"Catey knows her shit, drops the occasional F-bomb, and never lets her people down. Fierce, loyal, and exactly the kind of leader you want in your corner."</p>
-        <p class="author-name">Rebecca, Small Business Owner</p>
+      <!-- Hero Image -->
+      <div class="grid-col-5">
+        <img src="images/catey-hero.jpg" alt="Catey, burnout recovery coach, smiling warmly" class="img-full img-rounded img-shadow">
       </div>
-      
-      <div class="card card--testimonial">
-        <p class="text--quotes">"She always had my back - zero ego, just honest support and clarity. Best coach I’ve ever had, hands down."</p>
-        <p class="author-name">Erika, Director</p>
-      </div>
-      
-      <div class="card card--testimonial">
-        <p class="text--quotes">"Catey’s sharp, cuts through the noise, and actually gives a damn. I’ve never felt more challenged or more supported. Working with her changed everything for me."</p>
-        <p class="author-name">Alex, Healthcare Leader</p>
-      </div>
-    
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section class="section--padding">
+    <div class="container">
+      <div class="grid-12">
+        <div class="grid-col-12">
+          <h2 class="heading--h2">This Is What Burnout Actually Looks Like.</h2>
+          <p class="subheading--sh2 margin-top-sm">
+            You're the go-to. The one who delivers. They see success.<br>
+            No one asks what it's costing you.
+          </p>
+          <ul class="list--styled margin-top-md">
+            <li>You're sleeping all weekend – and still waking up tired</li>
+            <li>Your mind is racing, but your motivation is gone</li>
+            <li>You've tried resting, pushing harder, pretending it's fine – nothing's worked</li>
+            <li>You hate your inbox, your job... and yourself for hating it</li>
+            <li>You keep showing up, even when there's nothing left in the tank</li>
+          </ul>
+          <p class="subheading--sh2 margin-top-md">
+            <strong class="text--bold">Burnout isn't a personal flaw. It's a system failure.</strong><br>
+            But you don't have to go down with it.
+          </p>
+          <a href="/quiz" class="button button--primary margin-top-md">Get your Burnout Score</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Catey Section -->
+  <section class="section--padding bg-cream-alt">
+    <div class="container">
+      <div class="grid-12" style="align-items: center;">
+        <div class="grid-col-5">
+          <img src="images/catey-hi.jpg" alt="Catey, founder of The Burnout Codex" class="img-full img-rounded img-shadow">
+        </div>
+        <div class="grid-col-7">
+          <h2 class="heading--h2">Hi, I'm Catey.</h2>
+          <div class="text--body">
+            <p class="margin-bottom-sm">I've built programs, led teams, and trained leaders across industries... until I was fried. Burnout hit me HARD.</p>
+            <p class="margin-bottom-sm">I didn't just feel tired. I felt used up. Resentful. Angry, even. Like no matter how much I gave, it was never enough.</p>
+            <p class="margin-bottom-sm">Now I help high-achieving women stop the spiral and lead in a way that actually works for their brains, their bodies, and their lives.</p>
+            <p class="margin-bottom-sm">I hold a doctorate in psychology. But more importantly? I've lived this. And I built the system I couldn't find—the one that helps you recover without gaslighting yourself along the way.</p>
+            <p class="margin-bottom-sm text--accent text--bold">Because I wasn't going to let burnout break me. I still had sh*t to do.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Steps Section -->
+  <section class="section--next-steps">
+    <div class="container">
+      <h2 class="heading--h2 text-center margin-bottom-lg">Choose Your Next Step</h2>
+      <div class="grid-12">
+        <div class="grid-col-4">
+          <div class="card card--primary">
+            <h3 class="subheading--sh1 margin-bottom-sm">Codex Lite</h3>
+            <p class="text--body margin-bottom-md">It won't fix burnout overnight. It's a reset button to help you pause, regroup, and intentionally choose your next step.</p>
+            <a href="/reset" class="button button--primary">The Reset Button</a>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="card card--primary">
+            <h3 class="subheading--sh1 margin-bottom-sm">Codex Coaching</h3>
+            <p class="text--body margin-bottom-md">This isn't another self-care routine. It's a neuroscience-based system to help you reclaim your energy, your power, your life.</p>
+            <a href="/coaching" class="button button--primary">Let's Talk</a>
+          </div>
+        </div>
+        <div class="grid-col-4">
+          <div class="card card--primary">
+            <h3 class="subheading--sh1 margin-bottom-sm">Not ready to dive in yet?</h3>
+            <p class="text--body margin-bottom-md">Start small. This self-assessment helps you understand where you are—so you can decide where to go next.</p>
+            <a href="/quiz" class="button button--primary">Take the Self-Assessment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section--padding bg-cream-alt">
+    <div class="container">
+      <h2 class="heading--h2 text-center margin-bottom-lg">Real Women. Real Support.</h2>
+      <div class="testimonials">
+        <div class="card card--testimonial">
+          <p class="text--body text--italic margin-bottom-sm">"Catey knows her shit, drops the occasional F-bomb, and never lets her people down. Fierce, loyal, and exactly the kind of leader you want in your corner."</p>
+          <p class="subheading--sh3 text-secondary text--bold">– Rebecca, Small Business Owner</p>
+        </div>
+        
+        <div class="card card--testimonial">
+          <p class="text--body text--italic margin-bottom-sm">"She always had my back - zero ego, just honest support and clarity. Best coach I've ever had, hands down."</p>
+          <p class="subheading--sh3 text-secondary text--bold">– Erika, Director</p>
+        </div>
+        
+        <div class="card card--testimonial">
+          <p class="text--body text--italic margin-bottom-sm">"Catey's sharp, cuts through the noise, and actually gives a damn. I've never felt more challenged or more supported. Working with her changed everything for me."</p>
+          <p class="subheading--sh3 text-secondary text--bold">– Alex, Healthcare Leader</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="text-center">
+        <p class="text--body margin-bottom-md">
+          <strong>Medical Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical, psychological, or professional advice. Always consult with qualified healthcare providers for mental health concerns.
+        </p>
+        <nav class="footer-nav margin-bottom-sm">
+          <ul>
+            <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-link">Terms of Use</a></li>
+            <li><a href="/disclaimer" class="footer-link">Medical Disclaimer</a></li>
+          </ul>
+        </nav>
+        <p class="text--body">© 2025 The Burnout Codex. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Navigation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navList = document.querySelector('.nav-list');
+      
+      navToggle.addEventListener('click', function() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navList.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navList.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
