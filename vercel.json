@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/assessment_overview.html" },
+    { "source": "/quiz", "destination": "/assessment.html" },
+    { "source": "/results", "destination": "/assessment_results.html" },
+    { "source": "/codex-lite", "destination": "/codex_lite.html" },
+    { "source": "/privacy-policy", "destination": "/privacy_policy.html" },
+    { "source": "/terms", "destination": "/terms_of_use.html" },
+    { "source": "/disclaimer", "destination": "/disclaimer.html" }
+  ]
+}
