@@ -1,19 +1,106 @@
-<section class="section--padding container">
-  <h1 class="heading--h1">Privacy Policy</h1>
-  <p class="text--body">The Burnout Codex, LLC respects your privacy. This policy explains how we collect, use, and protect your information.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | The Burnout Codex</title>
+  <meta name="description" content="Privacy Policy for The Burnout Codex website and services.">
+  <link rel="stylesheet" href="css/tbc_site_design.css">
+</head>
+<body>
+  
+  <!-- Navigation -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <span>THE BURNOUT</span> <span class="logo-accent">CODEX</span>
+      </a>
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About Assessment</a></li>
+        <li><a href="/quiz" class="nav-link">Take Assessment</a></li>
+        <li><a href="/codex-lite" class="nav-link">Codex Lite</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </div>
+</header>
 
+  
+  <section class="section--padding container">
+  <h1 class="heading--h1">The Burnout Codex Privacy Policy</h1>
+  <p class="text--body">The Burnout Codex, LLC (hereinafter referred to as 'we', 'us', or 'our') is committed to protecting the privacy of all users (hereinafter referred to as 'you' or 'your'). This clause details what information is collected, how it is used, and your rights regarding privacy.</p>
+
+  <p class="text--body">By using our Assessment Tool and other services, you consent to the collection, use, and disclosure of your Personal Information as described in this Privacy Policy.</p>
+  
   <h2 class="heading--h2">1. Information We Collect</h2>
-  <p class="text--body">We collect information you provide, such as your name, email, and quiz responses. We may also collect usage data for analytics purposes.</p>
+  <p class="text--body"> We collect the following types of Personal Information:</p>
 
+  <p class="text--body margin-left-sm">a. Information that you provide directly: When you sign up for our services, use our Assessment Tool, or communicate with us, you may provide us with your name, email address, phone number, and other contact details.</p>
+
+  <p class="text--body margin-left-sm">b. Information collected automatically: We may collect information about your interactions with our website, including your IP address, browser type, and cookies. We use this information to improve your user experience and the functionality of our services.</p>
+ 
+  <p class="text--body margin-left-sm">c. Information from Third-Party Providers: We may receive Personal Information from third parties that assist us in providing services, such as payment processing and email marketing.</p>
+  
   <h2 class="heading--h2">2. How We Use Your Information</h2>
-  <p class="text--body">We use your information to deliver content, improve services, and communicate with you. We do not sell your data to third parties.</p>
+  <p class="text--body .margin-left-sm">To provide and improve our services: We use your Personal Information to offer and enhance the Assessment Tool and coaching services.</p>
+
+  <p class="text--body .margin-left-sm">Communication: We may use your contact information to send you updates, newsletters, and promotional materials that may be of interest to you.</p>
+
+  <p class="text--body .margin-left-sm">Legal compliance: We may use your Personal Information to comply with applicable laws and regulations.</p>
 
   <h2 class="heading--h2">3. Cookies</h2>
   <p class="text--body">We may use cookies to improve your experience. You can disable cookies in your browser settings.</p>
 
   <h2 class="heading--h2">4. Your Rights</h2>
-  <p class="text--body">You have the right to access, correct, or delete your data. Contact us at <a href="mailto:catey@burnoutcodex.com">catey@burnoutcodex.com</a>.</p>
+  <p class="text--body .margin-left-sm">Access and update: You have the right to access and update your Personal Information at any time.</p>
 
-  <h2 class="heading--h2">5. Changes to This Policy</h2>
-  <p class="text--body">We may update this policy as needed. Continued use of the site indicates your acceptance of any changes.</p>
+  <p class="text--body .margin-left-sm">Deletion: You can request the deletion of your Personal Information under certain circumstances, subject to applicable laws.</p>
+
+  <p class="text--body .margin-left-sm">Opt-out: You can opt-out of receiving promotional communications by following the instructions in the communication or contacting us directly.</p>
+
+  <h2 class="heading--h2">5. Data Security</h2>
+  <p class="text--body">We implement reasonable security measures to protect your Personal Information from unauthorized access, use, or disclosure. However, no method of transmission over the internet or electronic storage is 100% secure.</p>
+
+  <h2 class="heading--h2">6. Third-Party Providers</h2>
+  <p class="text--body">We use third-party service providers for website hosting, assessment tools, email marketing, product delivery, and payment processing. These providers are contractually obligated to protect your Personal Information in a manner consistent with this Privacy Policy.</p>
+
+  <h2 class="heading--h2">7. Changes to This Policy</h2>
+  <p class="text--body">We reserve the right to modify this clause at any time. Changes will be effective upon posting on our website. Your continued use of our services following the posting of changes constitutes your acceptance of such changes. Please review this policy periodically for updates.</p>
 </section>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="text-center">
+      <p class="text--body margin-bottom-md">
+        <strong>Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical, psychological, or professional advice. Always consult with qualified healthcare providers for mental health concerns.
+      </p>
+      <nav class="footer-nav margin-bottom-sm">
+        <ul>
+          <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/terms" class="footer-link">Terms of Use</a></li>
+          <li><a href="/disclaimer" class="footer-link">Disclaimer</a></li>
+        </ul>
+      </nav>
+      <p class="text--body">© 2025 The Burnout Codex. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

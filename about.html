@@ -1,4 +1,36 @@
-<!-- Hero Section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use | The Burnout Codex</title>
+  <meta name="description" content="About The Burnout Codex">
+  <meta name="keywords" content="burnout, assessment, neuroscience, reset, high-achievers, Codex Lite, mental health, coaching">
+  <link rel="stylesheet" href="css/tbc_site_design.css">
+</head>
+<body>
+  
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">
+          <span>THE BURNOUT</span> <span class="logo-accent">CODEX</span>
+        </a>
+        <ul class="nav-list">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/about" class="nav-link">About Assessment</a></li>
+          <li><a href="/take" class="nav-link">Take Assessment</a></li>
+          <li><a href="/resources" class="nav-link">Resources</a></li>
+        </ul>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
 <section class="hero-section section--padding container">
   <div class="grid-12">
     <div class="hero-text-wrapper" style="grid-column: span 7;">
@@ -72,3 +104,33 @@
   <p class="text--body">When I’m not doing this work, you’ll find me hiking with my Rhodesian Ridgeback mix, geeking out on behavioral psychology, or reading something wildly nerdy.</p>
   <p class="text--body">I believe in deep rest, daily movement, and burning down systems that no longer serve us.</p>
 </section>
+
+ <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="text-center">
+        <p class="text--body margin-bottom-md">© 2025 The Burnout Codex. All rights reserved.</p>
+        <nav class="footer-nav margin-bottom-sm">
+          <ul>
+            <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+            <li><a href="/terms" class="footer-link nav-link--active">Terms of Use</a></li>
+            <li><a href="/disclaimer" class="footer-link">Medical Disclaimer</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('open');
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,4 +1,36 @@
-<section class="section--padding container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disclaimer | The Burnout Codex</title>
+  <meta name="description" content="Disclaimer for The Burnout Codex website and services.">
+  <link rel="stylesheet" href="css/tbc_site_design.css">
+</head>
+<body>
+  
+  <!-- Navigation -->
+<header class="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="logo">
+        <span>THE BURNOUT</span> <span class="logo-accent">CODEX</span>
+      </a>
+      <ul class="nav-list">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About Assessment</a></li>
+        <li><a href="/quiz" class="nav-link">Take Assessment</a></li>
+        <li><a href="/codex-lite" class="nav-link">Codex Lite</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+  
+  <section class="section--padding container">
   <h1 class="heading--h1">Disclaimer</h1>
   <p class="text--body">The Burnout Codex, LLC provides educational content and coaching services. This is not therapy, medical advice, or a substitute for professional care.</p>
 
@@ -8,3 +40,36 @@
 
   <p class="text--body">Contact: <a href="mailto:catey@burnoutcodex.com">catey@burnoutcodex.com</a></p>
 </section>
+
+  <!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="text-center">
+      <p class="text--body margin-bottom-md">
+        <strong>Disclaimer:</strong> The information provided on this website is for educational purposes only and is not intended as medical, psychological, or professional advice. Always consult with qualified healthcare providers for mental health concerns.
+      </p>
+      <nav class="footer-nav margin-bottom-sm">
+        <ul>
+          <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+          <li><a href="/terms" class="footer-link">Terms of Use</a></li>
+          <li><a href="/disclaimer" class="footer-link">Disclaimer</a></li>
+        </ul>
+      </nav>
+      <p class="text--body">© 2025 The Burnout Codex. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !expanded);
+        navList.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

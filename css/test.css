@@ -563,7 +563,7 @@ small {
   outline-offset: 4px;
 }
 
-/* === Hero Section === UPDATED with proper sizing */
+/* === Hero Section === UPDATED with proper sizing and responsive behavior */
 .hero-section {
   padding: var(--space-xl) 0;
 }
@@ -989,7 +989,7 @@ small {
 }
 
 .bg-cream-alt {
-  background-color: var(--cream-alt);
+  background-color: var(--neutral-cream-alt);
 }
 
 @media (max-width: 768px) {
@@ -1032,26 +1032,10 @@ small {
   }
 }
 
-/* ===========================
-   9. COMPONENT VARIATIONS
-   =========================== */
-
 /* Section-specific adjustments */
 .section--next-steps {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-xl);
-}
-
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-}
-
-@media (max-width: 1024px) {
-  .testimonials {
-    grid-template-columns: 1fr;
-  }
 }
 
 .testimonials {
@@ -1108,4 +1092,6 @@ RECENT UPDATES:
 ✅ Improved grid system mobile behavior
 ✅ Added large button variant for prominent CTAs
 ✅ Added grid offset utility for content centering
+✅ HERO SECTION: Added proper desktop/mobile sizing and button behavior
+✅ SECTIONS: Added responsive padding and typography scaling for mobile
 */

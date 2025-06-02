@@ -146,12 +146,12 @@ a:focus-visible {
 ul {
   list-style-type: disc;
   color: var(--text-primary);
-  padding-left: var(--space-lg); /* More indentation from paragraphs */
+  padding-left: var(--space-md); /* More indentation from paragraphs */
   margin-left: 0;
 }
 
 ul li {
-  padding-left: var(--space-xs); /* Closer bullet to text */
+  padding-left: var(--space-sm); /* Closer bullet to text */
   margin-left: 0;
 }
 
@@ -304,39 +304,6 @@ small {
 .grid-col-11 { grid-column: span 11; }
 .grid-col-12 { grid-column: span 12; }
 
-/* UPDATED responsive grid behavior */
-@media (max-width: 1024px) {
-  .grid-12 {
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-  
-  .grid-col-1,
-  .grid-col-2,
-  .grid-col-3,
-  .grid-col-4,
-  .grid-col-5,
-  .grid-col-6,
-  .grid-col-7,
-  .grid-col-8,
-  .grid-col-9,
-  .grid-col-10,
-  .grid-col-11,
-  .grid-col-12 {
-    grid-column: span 1;
-  }
-  
-  /* Center offer cards on mobile */
-  .next-steps .grid-col-4 {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .next-steps .card {
-    max-width: 400px;
-    width: 100%;
-  }
-}
 
 /* ===========================
    6. COMPONENT STYLES
@@ -421,6 +388,12 @@ small {
 .card--testimonial {
   border-left: 4px solid var(--secondary-color);
   font-style: italic;
+}
+
+.card.highlight {
+  border: 2px solid var(--trust-olive-dark);
+  background-color: var(--neutral-cream);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 /* === Navigation === */
@@ -788,6 +761,12 @@ small {
 .margin-bottom-lg { margin-bottom: var(--space-lg); }
 .margin-bottom-xl { margin-bottom: var(--space-xl); }
 
+.margin-left-xs { margin-left: var(--space-xs); }
+.margin-left-sm { margin-left: var(--space-sm); }
+.margin-left-md { margin-left: var(--space-md); }
+.margin-left-lg { margin-left: var(--space-lg); }
+.margin-left-xl { margin-left: var(--space-xl); }
+
 .padding-xs { padding: var(--space-xs); }
 .padding-sm { padding: var(--space-sm); }
 .padding-md { padding: var(--space-md); }
@@ -1044,6 +1023,14 @@ small {
 .section--next-steps {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-xl);
+}
+
+/* Specific Next Steps Grid */
+.section--next-steps .grid-12 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .testimonials {
@@ -1312,6 +1299,61 @@ small {
   .quiz-options {
     gap: 2px; /* Super tight on small phones */
   }
+}
+
+.quiz-progress-container {
+  position: sticky;
+  top: 10px;
+  z-index: 10;
+  background-color: var(--trust-olive-dark);
+  padding: var(--space-xs) var(--space-sm);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.quiz-progress {
+  width: 100%;
+  background-color: var(--trust-olive-dark);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 8px;
+}
+
+.quiz-progress-bar {
+  height: 100%;
+  background-color: var(--trust-olive-dark);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.quiz-progress-text {
+  text-align: right;
+  font-size: 0.875rem;
+  margin-top: var(--space-xs);
+  color: var(--neutral-dark);
+}
+
+/* =============================================
+   Legal Modal Styles
+============================================= */
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: var(--neutral-cream);
+  padding: var(--space-lg);
+  border-radius: var(--radius-md);
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 /* ===========================
