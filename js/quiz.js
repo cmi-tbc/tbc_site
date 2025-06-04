@@ -70,9 +70,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const progressHTML = `
     <div class="quiz-progress-container">
-      <div class="quiz-progress-bar"></div>
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar"></div>
+      </div>
+      <div class="quiz-progress-text">Answered 0 of ${totalQuestions}</div>
     </div>
-    <div class="quiz-progress-text">Answered 0 of ${totalQuestions}</div>
   `;
   formContainer.insertAdjacentHTML('beforebegin', progressHTML);
 }
@@ -169,10 +171,11 @@ document.addEventListener('click', function(e) {
         redFlags: redFlags
       };
 
-      localStorage.setItem('burnoutQuizData', JSON.stringify(quizData));
+      localStorage.setItem('burnoutScore', totalScore);
+      localStorage.setItem('redFlags', JSON.stringify(redFlags));
 
       // Redirect to Results Page
-      window.location.href = 'assessment_results.html';
+      window.location.href = 'burnout_results_page_rebuild_2025-06-03.html';
     });
   }
 
