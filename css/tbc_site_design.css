@@ -1945,19 +1945,6 @@ small {
   margin-left: var(--space-md);
 }
 
-/* === ⚠️ FIX 5: ASSESSMENT FORM CENTERING === */
-/* Fix quiz layout centering issues */
-.section--padding.bg-cream-alt .container .grid-12 {
-  display: flex;
-  justify-content: center;
-}
-
-.section--padding.bg-cream-alt .container .grid-12 .grid-col-8 {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 /* === ⚠️ FIX 6: RESPONSIVE IMAGE SIZING === */
 /* Fix hero image sizing issues */
 .hero-section .img-full {
@@ -2123,7 +2110,7 @@ small {
 /* ===========================
    END OF CRITICAL FIXES
    =========================== */
-   
+
 /* ===========================
    SYSTEM NOTES & DOCUMENTATION
    =========================== */
