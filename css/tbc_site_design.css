@@ -1991,25 +1991,6 @@ small {
   z-index: 10;
 }
 
-/* === 💡 ENHANCEMENT 2: ACCESSIBILITY IMPROVEMENTS === */
-/* Better focus states for keyboard navigation */
-.quiz-answer:focus-within {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-  background-color: var(--neutral-cream-alt);
-}
-
-/* Better modal accessibility */
-.modal-overlay {
-  backdrop-filter: blur(2px);
-}
-
-.modal-content {
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
 /* === 💡 ENHANCEMENT 3: LAYOUT CONSISTENCY FIXES === */
 /* Fix testimonials grid implementation */
 .testimonials,
