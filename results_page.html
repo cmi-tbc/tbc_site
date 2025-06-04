@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Burnout Results</title>
+  <title>Your Burnout Results | The Burnout Codex</title>
+  <meta name="description" content="Understand your burnout assessment results and get personalized recommendations for recovery.">
   <link rel="stylesheet" href="css/tbc_site_design.css" />
 </head>
 
@@ -39,8 +40,8 @@
    />
     <div class="hero-overlay"></div>
     <div class="hero-content container">
-      <h1 class="heading--h1">You Can’t Take Your Power Back Without Clarity</h1>
-      <p class="subheading--sh1">This score doesn’t define you. But it does reveal what the system’s been costing you. Let’s decode it—together.</p>
+      <h1 class="heading--h1">You Can't Take Your Power Back Without Clarity</h1>
+      <p class="subheading--sh1">This score doesn't define you. But it does reveal what the system's been costing you. Let's decode it—together.</p>
     </div>
   </section>
 
@@ -58,13 +59,13 @@
             <div class="bar-tier tier--high">Burnout</div>
             <div class="bar-tier tier--critical">Critical</div>
           </div>
-          <div class="score-value">42 / 60</div>
+          <div class="score-value" id="total-score">Loading...</div>
         </div>
 
         <!-- Meta Summary -->
         <div class="score-meta">
-          <p><strong>Red Flags:</strong> 3 of 5</p>
-          <p><strong>Domains Triggered:</strong> 4</p>
+          <p><strong>Red Flags:</strong> <span id="red-flag-count">--</span></p>
+          <p><strong>Tier:</strong> <span id="burnout-tier">--</span></p>
         </div>
       </div>
 
@@ -78,39 +79,38 @@
         <div class="domain-row">
           <div class="domain-name">Exhaustion</div>
           <div class="domain-description">Physical, mental, emotional depletion – the hallmark of burnout</div>
-          <div class="domain-score">10 / 12</div>
+          <div class="domain-score" id="domain-1-score">-- / 12</div>
         </div>
         <div class="domain-row">
           <div class="domain-name">Disconnection</div>
           <div class="domain-description">Emotional withdrawal, numbness, or cynicism toward others or your work</div>
-          <div class="domain-score">9 / 12</div>
+          <div class="domain-score" id="domain-2-score">-- / 12</div>
         </div>
         <div class="domain-row">
           <div class="domain-name">Self-Efficacy Loss</div>
           <div class="domain-description">Doubt in your value, impact, or ability to turn things around</div>
-          <div class="domain-score">8 / 12</div>
+          <div class="domain-score" id="domain-3-score">-- / 12</div>
         </div>
         <div class="domain-row">
           <div class="domain-name">Overcompensation</div>
           <div class="domain-description">Guilt, people-pleasing, and control patterns that burn you out faster</div>
-          <div class="domain-score">7 / 12</div>
+          <div class="domain-score" id="domain-4-score">-- / 12</div>
         </div>
         <div class="domain-row">
           <div class="domain-name">Systemic Pressure</div>
           <div class="domain-description">Workload, misaligned values, and external structures draining you</div>
-          <div class="domain-score">8 / 12</div>
+          <div class="domain-score" id="domain-5-score">-- / 12</div>
         </div>
       </div>
+      
       <!-- Red Flag Warning Block -->
-      <div class="red-flag-warning margin-top-lg">
+      <div class="red-flag-warning margin-top-lg" id="red-flag-section" style="display: none;">
         <div class="red-flag-header">
           <h3 class="subheading--sh2 text--accent">🚩 Red Flags Noted</h3>
-          <p class="text--body">You endorsed several responses associated with elevated burnout risk. These aren’t just stress—they’re signals. Pay attention to what your system is trying to say.</p>
+          <p class="text--body">You endorsed several responses associated with elevated burnout risk. These aren't just stress—they're signals. Pay attention to what your system is trying to say.</p>
         </div>
-        <ul class="red-flag-list">
-          <li>I go through the motions, but feel emotionally flat → Often</li>
-          <li>I care less about things I used to be passionate about → Sometimes</li>
-          <li>I’ve lost faith in my ability to turn things around → Very Often</li>
+        <ul class="red-flag-list" id="red-flag-list">
+          <!-- Red flags will be populated by JavaScript -->
         </ul>
       </div>
     </div>
@@ -122,47 +122,47 @@
 
       <!-- Stable -->
       <div class="tier-feedback tier--stable">
-        <h2 class="heading--h2">You’re Steady—For Now</h2>
+        <h2 class="heading--h2">You're Steady—For Now</h2>
         <p class="text--body">
-          You’re not in burnout—and that’s a good thing. But let’s be honest: you didn’t land here by accident.<br><br>
-          Maybe you’re stressed, stretched thin, or starting to wonder if it’s all sustainable. Maybe you took this quiz to make sure you're “not that bad.”<br><br>
+          You're not in burnout—and that's a good thing. But let's be honest: you didn't land here by accident.<br><br>
+          Maybe you're stressed, stretched thin, or starting to wonder if it's all sustainable. Maybe you took this quiz to make sure you're "not that bad."<br><br>
           Whatever brought you here, this is your moment. Your system is still holding—but pressure has a way of compounding.<br><br>
-          Now’s the time to build in boundaries, reset patterns, and protect your energy <em>before</em> burnout moves in quietly and stays too long.
+          Now's the time to build in boundaries, reset patterns, and protect your energy <em>before</em> burnout moves in quietly and stays too long.
         </p>
       </div>
 
       <!-- Early Signs -->
       <div class="tier-feedback tier--early">
-        <h2 class="heading--h2">You’re Feeling It. That’s a Signal—Not a Failure</h2>
+        <h2 class="heading--h2">You're Feeling It. That's a Signal—Not a Failure</h2>
         <p class="text--body">
-          You’re not imagining it. The fatigue, the low-grade dread, the dip in motivation—they’re real.<br><br>
-          You’re not in full burnout, but you’re not coasting either. You’re holding it together, but it’s taking more out of you than it used to.<br><br>
-          This is the in-between place. The pressure is building, and the usual strategies—pushing through, powering up, pretending it’s fine—aren’t cutting it anymore.<br><br>
+          You're not imagining it. The fatigue, the low-grade dread, the dip in motivation—they're real.<br><br>
+          You're not in full burnout, but you're not coasting either. You're holding it together, but it's taking more out of you than it used to.<br><br>
+          This is the in-between place. The pressure is building, and the usual strategies—pushing through, powering up, pretending it's fine—aren't cutting it anymore.<br><br>
           The good news? You can turn this around. But not by doing more. You need a system that works <em>with</em> you—not one that keeps grinding you down.
         </p>
       </div>
 
       <!-- Burnout -->
       <div class="tier-feedback tier--burnout">
-        <h2 class="heading--h2">You’re In It. This Is Burnout.</h2>
+        <h2 class="heading--h2">You're In It. This Is Burnout.</h2>
         <p class="text--body">
-          This isn’t “just stress.” This is system overload.<br><br>
-          You’re depleted, running on fumes, and questioning whether you can keep this up. Some days, you still push through. But that doesn’t mean you’re fine—it means you’re operating on survival mode.<br><br>
-          This is the threshold. The point where exhaustion turns into something more permanent if it isn’t addressed.<br><br>
-          You’re not broken. But you are being broken down by systems, expectations, and patterns that were never built to sustain you.<br><br>
-          It’s time for a reset. One that actually works in your real life—your brain, your bandwidth, your reality.
+          This isn't "just stress." This is system overload.<br><br>
+          You're depleted, running on fumes, and questioning whether you can keep this up. Some days, you still push through. But that doesn't mean you're fine—it means you're operating on survival mode.<br><br>
+          This is the threshold. The point where exhaustion turns into something more permanent if it isn't addressed.<br><br>
+          You're not broken. But you are being broken down by systems, expectations, and patterns that were never built to sustain you.<br><br>
+          It's time for a reset. One that actually works in your real life—your brain, your bandwidth, your reality.
         </p>
       </div>
 
       <!-- Critical -->
       <div class="tier-feedback tier--critical">
-        <h2 class="heading--h2">This Isn’t Working—And It’s Not Your Fault</h2>
+        <h2 class="heading--h2">This Isn't Working—And It's Not Your Fault</h2>
         <p class="text--body">
-          You’re not making this up. You’re not too sensitive. You’re not failing.<br><br>
+          You're not making this up. You're not too sensitive. You're not failing.<br><br>
           You are in burnout—and your system is in full collapse.<br><br>
-          The exhaustion, the guilt, the brain fog, the short fuse, the emptiness—it’s all real. These aren’t personal weaknesses. They’re the downstream effects of running beyond your limits for too long in a system that never gave you room to breathe.<br><br>
-          You don’t need hacks. You don’t need to push through.<br><br>
-          You need structured recovery. You need a reset that respects what you’ve been through—and helps you rebuild without starting from zero.<br><br>
+          The exhaustion, the guilt, the brain fog, the short fuse, the emptiness—it's all real. These aren't personal weaknesses. They're the downstream effects of running beyond your limits for too long in a system that never gave you room to breathe.<br><br>
+          You don't need hacks. You don't need to push through.<br><br>
+          You need structured recovery. You need a reset that respects what you've been through—and helps you rebuild without starting from zero.<br><br>
           This is not where your story ends. But it <em>is</em> where the old story has to.
         </p>
       </div>
@@ -176,7 +176,7 @@
 
       <!-- Stable -->
       <div class="cta-block cta--stable">
-        <h3 class="subheading--sh2">You’re Holding It Together. Let’s Keep It That Way.</h3>
+        <h3 class="subheading--sh2">You're Holding It Together. Let's Keep It That Way.</h3>
         <p class="text--body">
           The best time to protect your energy is <em>before</em> burnout takes hold.<br>
           Get the Prevention Toolkit—a short, practical guide to building boundaries, energy rituals, and emotional buffers while you're still ahead.
@@ -186,7 +186,7 @@
 
       <!-- Early Signs -->
       <div class="cta-block cta--early">
-        <h3 class="subheading--sh2">You’re on the Edge. Let’s Shift the Trajectory.</h3>
+        <h3 class="subheading--sh2">You're on the Edge. Let's Shift the Trajectory.</h3>
         <p class="text--body">
           Burnout is creeping in—but you can still turn it around.<br>
           Get <strong>The Disruption Kit</strong>: targeted tools to interrupt the patterns before they deepen and help you reset the system.
@@ -196,22 +196,22 @@
 
       <!-- Burnout -->
       <div class="cta-block cta--burnout">
-        <h3 class="subheading--sh2">You’re in Burnout. Let’s Reset—Strategically.</h3>
+        <h3 class="subheading--sh2">You're in Burnout. Let's Reset—Strategically.</h3>
         <p class="text--body">
-          You don’t need fluff. You need a map.<br>
+          You don't need fluff. You need a map.<br>
           Get the Burnout Recovery Map: your first steps toward clarity, calm, and a system that works in the real world.
         </p>
         <div class="btn-group">
           <button class="button button--primary" data-formkit-toggle="99a6158cbe">Send Me the Recovery Map</button>
-          <a href="/codex_lite.html" class="button button--ghost">Explore Codex Lite</a>
+          <a href="/codex-lite" class="button button--ghost">Explore Codex Lite</a>
         </div>
       </div>
 
       <!-- Critical -->
       <div class="cta-block cta--critical">
-        <h3 class="subheading--sh2">This Is Critical. It’s Time to Take Action.</h3>
+        <h3 class="subheading--sh2">This Is Critical. It's Time to Take Action.</h3>
         <p class="text--body">
-          This isn’t just stress—it’s full-body burnout.<br>
+          This isn't just stress—it's full-body burnout.<br>
           Download the Recovery Map for immediate relief, and book a strategy call if you need someone to walk through this with you.
         </p>
         <div class="btn-group">
@@ -242,10 +242,10 @@
   </div>
 </footer>
 
-  <!-- JS -->
+  <!-- External JavaScript Files -->
   <script src="js/tier_results_logic.js"></script>
 
-  <!-- Load Kit Modal Forms (only one embed script is needed) -->
+  <!-- Load Kit Modal Forms -->
   <script async data-uid="0959108656" src="https://the-burnout-codex.kit.com/0959108656/index.js"></script>
 
 </body>

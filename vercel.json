@@ -3,10 +3,45 @@
     { "source": "/", "destination": "/index.html" },
     { "source": "/about", "destination": "/assessment_overview.html" },
     { "source": "/quiz", "destination": "/assessment.html" },
-    { "source": "/results", "destination": "/assessment_results.html" },
+    { "source": "/results", "destination": "/results_page.html" },
     { "source": "/codex-lite", "destination": "/codex_lite.html" },
     { "source": "/privacy-policy", "destination": "/privacy_policy.html" },
     { "source": "/terms", "destination": "/terms_of_use.html" },
     { "source": "/disclaimer", "destination": "/disclaimer.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/assessment_results.html",
+      "destination": "/results",
+      "permanent": true
+    },
+    {
+      "source": "/burnout_results_page_rebuild_2025-06-03.html",
+      "destination": "/results", 
+      "permanent": true
+    }
   ]
 }

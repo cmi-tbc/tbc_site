@@ -1847,6 +1847,284 @@ small {
 }
 
 /* ===========================
+   🔧 CRITICAL FIXES & ENHANCEMENTS
+   Add this section to the END of tbc_site_design.css
+   =========================== */
+
+/* === 🚨 CRITICAL FIX 1: MOBILE NAVIGATION === */
+/* Fix conflicting positioning rules that break mobile nav */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: var(--space-md);
+  /* REMOVED: position: static; - this was causing conflicts */
+}
+
+@media (max-width: 768px) {
+  .nav-list {
+    position: fixed; /* Changed from absolute to fixed for better mobile UX */
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background-color: var(--neutral-cream);
+    width: 250px; /* Slightly wider for better touch targets */
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.3s ease; /* Smooth slide animation */
+  }
+  
+  .nav-list.active {
+    transform: translateX(0); /* Slide in when active */
+  }
+  
+  .nav-toggle {
+    display: block;
+    z-index: 1001; /* Ensure toggle stays above nav */
+  }
+}
+
+/* === 🚨 CRITICAL FIX 2: HERO SECTION LAYOUT === */
+/* Fix inline style issues and improve mobile layout */
+.hero-section .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: flex-start; /* Remove inline style dependency */
+  text-align: left;
+}
+
+.hero-section .button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .hero-section .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .hero-section .button-group {
+    align-items: center;
+  }
+}
+
+/* === 🚨 CRITICAL FIX 3: GRID SYSTEM MOBILE COLLAPSE === */
+/* Fix mobile grid collapse issues */
+@media (max-width: 1024px) {
+  .grid-12 {
+    grid-template-columns: 1fr; /* Force single column on tablets and mobile */
+    gap: var(--space-md);
+  }
+  
+  /* Reset all grid column spans on mobile */
+  [class*="grid-col-"] {
+    grid-column: 1 / -1 !important;
+  }
+  
+  /* Remove grid offsets on mobile */
+  .grid-col-offset-2 {
+    margin-left: 0 !important;
+  }
+}
+
+/* === ⚠️ FIX 4: MISSING CSS CLASSES === */
+/* Add missing utility classes used in legal pages */
+.margin-left-sm {
+  margin-left: var(--space-sm);
+}
+
+.margin-left-md {
+  margin-left: var(--space-md);
+}
+
+/* === ⚠️ FIX 5: ASSESSMENT FORM CENTERING === */
+/* Fix quiz layout centering issues */
+.section--padding.bg-cream-alt .container .grid-12 {
+  display: flex;
+  justify-content: center;
+}
+
+.section--padding.bg-cream-alt .container .grid-12 .grid-col-8 {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === ⚠️ FIX 6: RESPONSIVE IMAGE SIZING === */
+/* Fix hero image sizing issues */
+.hero-section .img-full {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 1200px) {
+  .hero-section .img-full {
+    max-width: 400px; /* Prevent oversizing on large screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section .img-full {
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section .img-full {
+    max-width: 250px;
+  }
+}
+
+/* === 💡 ENHANCEMENT 1: RESULTS PAGE VISUAL INDICATOR === */
+/* Add styles for score position indicator */
+.score-meter {
+  position: relative;
+}
+
+.score-position-indicator {
+  position: absolute;
+  top: -8px;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 40px;
+  background-color: var(--neutral-charcoal);
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  z-index: 10;
+}
+
+/* === 💡 ENHANCEMENT 2: ACCESSIBILITY IMPROVEMENTS === */
+/* Better focus states for keyboard navigation */
+.quiz-answer:focus-within {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  background-color: var(--neutral-cream-alt);
+}
+
+/* Better modal accessibility */
+.modal-overlay {
+  backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* === 💡 ENHANCEMENT 3: LAYOUT CONSISTENCY FIXES === */
+/* Fix testimonials grid implementation */
+.testimonials,
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .testimonials,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* Fix next steps section grid */
+.section--next-steps .grid-12,
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section--next-steps .grid-12,
+  .next-steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+
+/* === 💡 ENHANCEMENT 4: PERFORMANCE OPTIMIZATION === */
+/* Add will-change for animated elements */
+.nav-list {
+  will-change: transform;
+}
+
+.quiz-progress-bar {
+  will-change: width;
+}
+
+/* === 💡 ENHANCEMENT 5: PRINT STYLES === */
+@media print {
+  .site-header,
+  .site-footer,
+  .nav-toggle,
+  .button {
+    display: none;
+  }
+  
+  .hero-overlay {
+    display: none;
+  }
+  
+  .hero-content {
+    color: black !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .score-bar {
+    border: 1px solid black;
+  }
+  
+  .tier-feedback.active {
+    display: block !important;
+  }
+}
+
+/* === 💡 ENHANCEMENT 6: MOBILE TOUCH IMPROVEMENTS === */
+/* Better touch targets and spacing */
+@media (max-width: 768px) {
+  .button {
+    min-height: 44px; /* Minimum touch target size */
+    padding: var(--space-sm) var(--space-md);
+  }
+  
+  .quiz-answer {
+    min-height: 44px; /* Better touch targets for quiz options */
+    padding: var(--space-sm);
+  }
+  
+  .nav-link {
+    padding: var(--space-sm) 0;
+    display: block;
+  }
+}
+
+/* ===========================
+   END OF CRITICAL FIXES
+   =========================== */
+   
+/* ===========================
    SYSTEM NOTES & DOCUMENTATION
    =========================== */
 
