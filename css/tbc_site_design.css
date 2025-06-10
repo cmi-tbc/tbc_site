@@ -1489,6 +1489,7 @@ small {
   .hero-content {
     text-align: center;
     padding: var(--space-md) var(--space-sm);
+    padding-top: var(--space-xl);
   }
 }
 
