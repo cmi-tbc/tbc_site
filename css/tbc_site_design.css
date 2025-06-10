@@ -415,7 +415,7 @@ small {
   border-bottom: 1px solid var(--soft-gray);
   position: relative; /* ensure stacking doesn’t affect layout */
   z-index: 999;
-  overflow: hidden; /* new line to prevent visual overflow */
+  overflow: visible;
 }
 
 .nav {
@@ -474,6 +474,9 @@ small {
   text-decoration: none;
 }
 
+.nav-toggle {
+  display: none;
+}
 /* === Navigation: Mobile Dropdown === */
 @media (max-width: 768px) {
   .nav-list {
