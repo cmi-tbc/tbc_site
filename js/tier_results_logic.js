@@ -236,48 +236,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function addScoreIndicator(score) {
     const scoreBar = document.querySelector('.score-bar');
-    if (!scoreBar) return;
+      if (!scoreBar) return;
 
-    // Calculate position percentage (0-100%)
-    const percentage = Math.min((score / 60) * 100, 100);
-    
-    // Create indicator element
-    const indicator = document.createElement('div');
-    indicator.className = 'score-position-indicator';
-    indicator.style.cssText = `
-      position: absolute;
-      top: -12px;
-      left: ${percentage}%;
-      transform: translateX(-50%);
-      width: 4px;
-      height: 40px;
-      background-color: var(--neutral-charcoal);
-      border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      z-index: 10;
-    `;
-    
-    // Add a small arrow below the bar
-    const arrow = document.createElement('div');
-    arrow.textContent = '▼';
-    arrow.style.cssText = `
-      position: absolute;
-      top: 32px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.9rem;
-      color: var(--neutral-charcoal);
-      pointer-events: none;
-    `;
+      const percentage = Math.min((score / 60) * 100, 100);
 
-    indicator.appendChild(arrow);
+      const indicator = document.createElement('div');
+      indicator.className = 'score-position-indicator';
+      indicator.style.left = `${percentage}%`;
 
-    // Make score bar container relative and add indicator
-    scoreBar.style.position = 'relative';
-    scoreBar.appendChild(indicator);
-    
-    console.log(`Score indicator placed at ${percentage.toFixed(1)}%`);
-  }
+      scoreBar.style.position = 'relative';
+      scoreBar.appendChild(indicator);
+    }
 
   // ================================
   // ERROR HANDLING & DEBUGGING
