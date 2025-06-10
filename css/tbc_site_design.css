@@ -1493,6 +1493,12 @@ small {
   }
 }
 
+@media (max-height: 500px) {
+  .hero--codexlite .hero-content {
+    padding-top: var(--space-xl);
+  }
+}
+
 .scroll-cue {
   position: absolute;
   bottom: var(--space-md);
