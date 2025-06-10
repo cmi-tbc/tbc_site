@@ -506,6 +506,8 @@ small {
     border: none;
     cursor: pointer;
     z-index: 1001;
+    padding-right: var(--space-sm);
+    margin-right: var(--space-sm);
   }
 
   .hamburger {
