@@ -1504,9 +1504,8 @@ small {
 }
 
 @media (max-width: 480px) {
-  .hero--codexlite .hero-image {
-    height: auto;
-    max-height: 60vh;
+  .hero--codexlite {
+    height: 60vh;
   }
 }
 
