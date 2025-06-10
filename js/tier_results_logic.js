@@ -127,10 +127,16 @@ document.addEventListener('DOMContentLoaded', function () {
         domainEl.textContent = `${score} / 12`;
         
         // Add color coding based on score severity
-        if (score >= 9) domainEl.style.color = 'var(--accent-color)';
-        else if (score >= 6) domainEl.style.color = 'var(--primary-color)';
-        else if (score >= 3) domainEl.style.color = '#C9CBA3';
-        else domainEl.style.color = 'var(--secondary-color)';
+        if (score >= 9) {
+          domainEl.style.color = '#7C1C1F'; // deep burgundy
+        } else if (score >= 6) {
+          domainEl.style.color = '#D45A00'; // strong orange
+        } else if (score >= 3) {
+          domainEl.style.color = '#6B6740'; // olive but readable
+        } else {
+          domainEl.style.color = '#3D6353'; // slate green
+        }
+          domainEl.style.fontWeight = '600';
       }
     });
   }
@@ -240,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
     indicator.className = 'score-position-indicator';
     indicator.style.cssText = `
       position: absolute;
-      top: -8px;
+      top: -12px;
       left: ${percentage}%;
       transform: translateX(-50%);
       width: 4px;
@@ -251,6 +257,21 @@ document.addEventListener('DOMContentLoaded', function () {
       z-index: 10;
     `;
     
+    // Add a small arrow below the bar
+    const arrow = document.createElement('div');
+    arrow.textContent = '▼';
+    arrow.style.cssText = `
+      position: absolute;
+      top: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.9rem;
+      color: var(--neutral-charcoal);
+      pointer-events: none;
+    `;
+
+    indicator.appendChild(arrow);
+
     // Make score bar container relative and add indicator
     scoreBar.style.position = 'relative';
     scoreBar.appendChild(indicator);

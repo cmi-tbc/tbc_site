@@ -1846,6 +1846,15 @@ small {
   flex-wrap: wrap;
 }
 
+/* === FIX: Stack CTAs vertically in Burnout and Critical tiers === */
+.cta--burnout .btn-group,
+.cta--critical .btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
 /* ===========================
    🔧 CRITICAL FIXES & ENHANCEMENTS
    Add this section to the END of tbc_site_design.css
@@ -2091,6 +2100,38 @@ small {
 /* ===========================
    END OF CRITICAL FIXES
    =========================== */
+
+   /* === FIX: Improve contrast in tier feedback blocks === */
+.tier-feedback {
+  background-color: var(--soft-white);  /* Fallback */
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  color: var(--neutral-charcoal);       /* Force high contrast */
+}
+
+/* Override background colors with lighter tier-safe tones */
+.tier-feedback.tier--critical {
+  background-color: #FDEDEC; /* light rose */
+}
+
+.tier-feedback.tier--burnout {
+  background-color: #FFF4EC; /* soft warm orange */
+}
+
+.tier-feedback.tier--early {
+  background-color: #F8F9EC; /* very light olive */
+}
+
+.tier-feedback.tier--stable {
+  background-color: #ECF7F2; /* light slate green */
+}
+
+.tier-feedback h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
 
 /* ===========================
    SYSTEM NOTES & DOCUMENTATION
