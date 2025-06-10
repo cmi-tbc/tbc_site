@@ -224,6 +224,11 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Small delay to show processing state
         setTimeout(() => {
+          // Fire GA4 quiz_completed event
+          gtag('event', 'quiz_completed', {
+            event_category: 'Quiz',
+            event_label: 'Burnout Assessment'
+          });
           // Redirect to Results Page (FIXED)
           window.location.href = '/results';
         }, 500);
