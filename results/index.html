@@ -226,7 +226,15 @@
         </p>
         <div class="btn-group">
           <button class="button button--primary" data-formkit-toggle="8141b7a9c6">Send Me the Recovery Map</button>
-          <a href="https://calendly.com/catey-burnoutcodex/30min" class="button button--ghost" target="_blank" rel="noopener">Schedule a Free Strategy Call</a>
+          <a href="https://calendly.com/catey-burnoutcodex/30min"
+            class="button button--ghost btn-schedule"
+            data-link-location="cta-critical"
+            target="_blank" rel="noopener"
+            onclick="gtag('event','schedule_call',{ 
+              'event_category':'Engagement',
+              'event_label':'Free Strategy Call', 
+              'transport_type':'beacon'
+            });">Schedule a Free Strategy Call</a>
         </div>
       </div>
 

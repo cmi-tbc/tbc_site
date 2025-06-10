@@ -276,4 +276,33 @@ document.addEventListener('DOMContentLoaded', function () {
     domainScores: domainScores
   });
 
+  // ================================
+  // EMAIL SUBMISSION TRACKING (FormKit modal forms)
+  // ================================
+
+  const observeKitFormSubmissions = () => {
+    const observer = new MutationObserver((mutationsList) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList') {
+          mutation.addedNodes.forEach(node => {
+            if (
+              node.nodeType === 1 &&
+              node.innerText.includes('Success!') // Modify if your success text is different
+            ) {
+              gtag('event', 'email_submitted', {
+                event_category: 'Lead Capture',
+                event_label: 'Toolkit Opt-in'
+              });
+              console.log('📩 email_submitted event fired to GA4');
+            }
+          });
+        }
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  };
+
+  observeKitFormSubmissions();
+
 });
