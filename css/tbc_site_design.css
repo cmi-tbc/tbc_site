@@ -1493,12 +1493,21 @@ small {
   }
 }
 
+.hero--codexlite .hero-image {
+  height: 100%; /* Keep the full hero effect on most tablets */
+}
+
 @media (max-height: 500px) {
   .hero--codexlite .hero-content {
     padding-top: var(--space-xl);
   }
 }
 
+.hero--codexlite .hero-image {
+    height: auto;
+    max-height: 60vh;
+  }
+  
 .scroll-cue {
   position: absolute;
   bottom: var(--space-md);
