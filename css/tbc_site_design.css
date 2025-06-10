@@ -1503,11 +1503,13 @@ small {
   }
 }
 
-.hero--codexlite .hero-image {
+@media (max-width: 480px) {
+  .hero--codexlite .hero-image {
     height: auto;
     max-height: 60vh;
   }
-  
+}
+
 .scroll-cue {
   position: absolute;
   bottom: var(--space-md);
