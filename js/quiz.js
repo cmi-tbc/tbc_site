@@ -58,6 +58,15 @@ document.addEventListener('DOMContentLoaded', function() {
       const value = parseInt(e.target.value);
       responses[questionId] = value;
       updateProgress();
+
+      // Fire quiz_started event only once
+      if (!window.quizStarted) {
+        window.quizStarted = true; // Flag to prevent multiple triggers
+        gtag('event', 'quiz_started', {
+          event_category: 'Quiz',
+          event_label: 'Burnout Assessment'
+        });
+      }
     }
   });
 
