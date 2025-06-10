@@ -1672,8 +1672,18 @@ small {
 
 @media (max-width: 480px) {
   .bar-tier {
-    padding-left: var(--space-sm);
-    padding-right: var(--space-sm);
+    padding-left: var(--space-xs); /* reduced padding to fit content */
+    padding-right: var(--space-xs);
+    white-space: normal;           /* ✅ Allow wrapping if needed */
+    text-align: center;
+    line-height: 1.2;              /* tighter line height for 2-line text */
+    font-size: 0.65rem;            /* slightly smaller to ease wrapping */
+    min-width: auto;               /* remove fixed constraint */
+    height: auto;                  /* allow taller rows if needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 }
 
