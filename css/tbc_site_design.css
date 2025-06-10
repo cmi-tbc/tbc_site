@@ -1651,7 +1651,7 @@ small {
   max-width: 500px;
   height: 24px;
   border-radius: var(--radius-sm);
-  overflow: hidden;
+  overflow: visible;
   margin-bottom: var(--space-sm);
   font-size: 0.75rem;
   text-transform: uppercase;
