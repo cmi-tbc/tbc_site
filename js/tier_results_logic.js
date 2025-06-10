@@ -69,6 +69,13 @@ document.addEventListener('DOMContentLoaded', function () {
   // Determine tier
   const tierInfo = determineTier(totalScore);
 
+  // Fire GA4 burnout_score_tier event
+  gtag('event', 'burnout_score_tier', {
+    event_category: 'Quiz',
+    event_label: tierInfo.name,
+    value: totalScore
+  });
+
   // Populate all score data
   populateScoreData(totalScore, redFlags, tierInfo, domainScores);
 
@@ -77,6 +84,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Handle red flags display
   handleRedFlags(redFlags);
+
+  // Fire GA4 red_flags_triggered event (only if 1+ flags)
+  if (redFlags.length >= 1) {
+    gtag('event', 'red_flags_triggered', {
+      event_category: 'Quiz',
+      event_label: 'High Risk',
+      value: redFlags.length
+    });
+  }
 
   // Add visual score indicator
   addScoreIndicator(totalScore);

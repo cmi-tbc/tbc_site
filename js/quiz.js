@@ -224,15 +224,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Small delay to show processing state
         setTimeout(() => {
-          console.log('Firing quiz_completed event'); // ✅ Debug confirmation
-          // 🔍 New debug line here
-          console.log('typeof gtag:', typeof gtag);
-          // GA4 Event
-          gtag('event', 'quiz_completed', {
-            event_category: 'Quiz',
-            event_label: 'Burnout Assessment'
-          });
-          // Redirect to Results Page (FIXED)
+          try {
+            gtag('event', 'quiz_completed', {
+              event_category: 'Quiz',
+              event_label: 'Burnout Assessment'
+            });
+          } catch (error) {
+            console.warn('GA4 tracking failed:', error);
+          }
+
           window.location.href = '/results';
         }, 500);
         
