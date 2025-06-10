@@ -1978,7 +1978,7 @@ small {
   height: 0;
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid var(--neutral-charcoal); /* match brand color */
+  border-top: 6px solid var(--neutral-charcoal); /* match brand color */
   z-index: 10;
 }
 
