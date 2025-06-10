@@ -1849,7 +1849,7 @@ small {
 .cta--critical .btn-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-sm);
 }
 
