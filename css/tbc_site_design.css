@@ -1670,6 +1670,13 @@ small {
   min-width: 60px; 
 }
 
+@media (max-width: 480px) {
+  .bar-tier {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+}
+
 .tier--low { background-color: var(--secondary-color); }
 .tier--mid { background-color: #C9CBA3; color: var(--neutral-charcoal); }
 .tier--high { background-color: var(--primary-color); }
