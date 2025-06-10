@@ -225,7 +225,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Small delay to show processing state
         setTimeout(() => {
           console.log('Firing quiz_completed event'); // ✅ Debug confirmation
-          // // Fire GA4 quiz_completed event
+          // 🔍 New debug line here
+          console.log('typeof gtag:', typeof gtag);
+          // GA4 Event
           gtag('event', 'quiz_completed', {
             event_category: 'Quiz',
             event_label: 'Burnout Assessment'
