@@ -437,31 +437,18 @@ small {
   color: var(--primary-color);
 }
 
+/* === Navigation: Reset & Desktop Layout === */
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   gap: var(--space-md);
-  position: static; /* Restore flow for desktop */
-}
-
-@media (max-width: 768px) {
-  .nav-list {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--neutral-cream);
-    width: 200px;
-    padding: var(--space-sm);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
+  position: static;
 }
 
 .nav-list li {
-  padding-left: 0; /* Override base ul li padding */
+  padding-left: 0; /* Remove default ul > li indentation */
 }
 
 .nav-link {
@@ -487,33 +474,62 @@ small {
   text-decoration: none;
 }
 
-/* Mobile Navigation */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+/* === Navigation: Mobile Dropdown === */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    background-color: var(--neutral-cream);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    padding: var(--space-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
 
-.hamburger {
-  width: 24px;
-  height: 2px;
-  background-color: var(--text-primary);
-  position: relative;
-}
+  .nav-list.active {
+    display: flex; /* Show when toggled via JS */
+  }
 
-.hamburger::before,
-.hamburger::after {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background-color: var(--text-primary);
-  position: absolute;
-  left: 0;
-}
+  .nav-list li {
+    margin-bottom: var(--space-sm); /* Vertical spacing */
+  }
 
-.hamburger::before { top: -8px; }
-.hamburger::after { top: 8px; }
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    position: relative;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    position: absolute;
+    left: 0;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  }
+
+  .hamburger::after {
+    top: 8px;
+  }
+}
 
 /* === Footer === UPDATED with better centering */
 .site-footer {
@@ -921,26 +937,6 @@ small {
   .grid-12 {
     grid-template-columns: 1fr;
     gap: var(--space-sm);
-  }
-
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    background-color: var(--background-alt);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    padding: var(--space-md);
-    box-shadow: var(--shadow-md);
-  }
-
-  .nav-list.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
   }
 
   .footer-nav ul {
@@ -1860,42 +1856,6 @@ small {
    Add this section to the END of tbc_site_design.css
    =========================== */
 
-/* === 🚨 CRITICAL FIX 1: MOBILE NAVIGATION === */
-/* Fix conflicting positioning rules that break mobile nav */
-.nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: var(--space-md);
-  /* REMOVED: position: static; - this was causing conflicts */
-}
-
-@media (max-width: 768px) {
-  .nav-list {
-    position: fixed; /* Changed from absolute to fixed for better mobile UX */
-    top: 100%;
-    right: 0;
-    flex-direction: column;
-    background-color: var(--neutral-cream);
-    width: 250px; /* Slightly wider for better touch targets */
-    padding: var(--space-md);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-    transform: translateX(100%); /* Start off-screen */
-    transition: transform 0.3s ease; /* Smooth slide animation */
-  }
-  
-  .nav-list.active {
-    transform: translateX(0); /* Slide in when active */
-  }
-  
-  .nav-toggle {
-    display: block;
-    z-index: 1001; /* Ensure toggle stays above nav */
-  }
-}
-
 /* === 🚨 CRITICAL FIX 2: HERO SECTION LAYOUT === */
 /* Fix inline style issues and improve mobile layout */
 .hero-section .hero-content {
@@ -2038,10 +1998,6 @@ small {
 }
 
 /* === 💡 ENHANCEMENT 4: PERFORMANCE OPTIMIZATION === */
-/* Add will-change for animated elements */
-.nav-list {
-  will-change: transform;
-}
 
 .quiz-progress-bar {
   will-change: width;
