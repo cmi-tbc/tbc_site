@@ -1665,6 +1665,9 @@ small {
   align-items: center;
   flex: 1;
   color: white;
+  white-space: nowrap;
+  padding: 0 var(--space-xs); /* optional, for spacing inside bars */
+  min-width: 60px; 
 }
 
 .tier--low { background-color: var(--secondary-color); }
@@ -1952,13 +1955,13 @@ small {
 
 .score-position-indicator {
   position: absolute;
-  top: -8px;
+  top: -10px; /* adjust for visual alignment */
   transform: translateX(-50%);
-  width: 4px;
-  height: 40px;
-  background-color: var(--neutral-charcoal);
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid var(--neutral-charcoal); /* match brand color */
   z-index: 10;
 }
 
